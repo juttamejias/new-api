@@ -65,6 +65,14 @@ func (a *Adaptor) SetupRequestHeader(c *gin.Context, req *http.Request, info *re
 	}
 	req.Header.Set("Authorization", "Bearer "+info.ApiKey)
 	req.Header.Set("User-Agent", " sd/JS 4.54.0")
+	req.Header.Set("X-Middleware-Subrequest", "app/api/chat/openai/route")
+	req.Header.Set("X-Stainless-Arch", "other:edge-runtime")
+	req.Header.Set("X-Stainless-Lang", "js")
+	req.Header.Set("X-Stainless-Os", "Unknown")
+	req.Header.Set("X-Stainless-Package-Version", "4.54.0")
+	req.Header.Set("X-Stainless-Runtime", "edge")
+	req.Header.Set("Accept-Language", "*")
+	req.Header.Set("Sec-Fetch-Mode", "cors")
 	//if info.ChannelType == common.ChannelTypeOpenRouter {
 	//	req.Header.Set("HTTP-Referer", "https://github.com/songquanpeng/one-api")
 	//	req.Header.Set("X-Title", "One API")
