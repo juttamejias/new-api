@@ -39,6 +39,16 @@ func (a *Adaptor) GetRequestURL(info *relaycommon.RelayInfo) (string, error) {
 func (a *Adaptor) SetupRequestHeader(c *gin.Context, req *http.Request, info *relaycommon.RelayInfo) error {
 	channel.SetupApiRequestHeader(info, c, req)
 	req.Header.Set("Authorization", fmt.Sprintf("Bearer %s", info.ApiKey))
+	req.Header.Set("Accept", "*/*")
+	req.Header.Set("User-Agent", " sd/JS 4.54.0")
+	req.Header.Set("X-Middleware-Subrequest", "app/api/chat/openai/route")
+	req.Header.Set("X-Stainless-Arch", "other:edge-runtime")
+	req.Header.Set("X-Stainless-Lang", "js")
+	req.Header.Set("X-Stainless-Os", "Unknown")
+	req.Header.Set("X-Stainless-Package-Version", "4.54.0")
+	req.Header.Set("X-Stainless-Runtime", "edge")
+	req.Header.Set("Accept-Language", "*")
+	req.Header.Set("Sec-Fetch-Mode", "cors")
 	return nil
 }
 
