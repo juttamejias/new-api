@@ -114,7 +114,7 @@ func cohereStreamHandler(c *gin.Context, resp *http.Response, info *relaycommon.
 			var cohereResp CohereResponse
 			err := json.Unmarshal([]byte(data), &cohereResp)
 			if err != nil {
-				common.SysError("error unmarshalling stream response: " + err.Error())
+				common.SysError("error unmarshalling stream response: " + err.Error() + " data : " + data)
 				return true
 			}
 			var openaiResp dto.ChatCompletionsStreamResponse
