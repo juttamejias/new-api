@@ -21,7 +21,7 @@ func requestOpenAI2Cohere(textRequest dto.GeneralOpenAIRequest) *CohereRequest {
 		ChatHistory: []ChatHistory{},
 		Message:     "",
 		Stream:      textRequest.Stream,
-		MaxTokens:   textRequest.GetMaxTokens()
+		MaxTokens:   textRequest.GetMaxTokens(),
 	}
 	if cohereReq.MaxTokens == 0 {
 		cohereReq.MaxTokens = 4000
