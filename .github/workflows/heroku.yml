@@ -18,8 +18,8 @@ jobs:
           stack: "container"
           usedocker: true
           docker_build_args: |
-            NODE_ENV
-            SECRET_KEY
+            SQL_DSN
+            TZ
         env:
           SQL_DSN: ${{secrets.NEW_API_DATABASE}}
           TZ: Asia/Shanghai
