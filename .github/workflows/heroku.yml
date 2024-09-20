@@ -17,9 +17,6 @@ jobs:
           heroku_email: ${{secrets.HEROKU_EMAIL}}
           stack: "container"
           usedocker: true
-          docker_build_args: |
-            SQL_DSN
-            TZ
         env:
-          SQL_DSN: ${{secrets.NEW_API_DATABASE}}
-          TZ: Asia/Shanghai
+          HD_SQL_DSN: ${{secrets.NEW_API_DATABASE}}
+          HD_TZ: Asia/Shanghai
